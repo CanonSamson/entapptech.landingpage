@@ -17,6 +17,11 @@ const openSans = localFont({
   variable: "--font-openSans",
 });
 
+const inter = localFont({
+  src: "../public/fonts/Inter.ttf",
+  variable: "--font-inter",
+});
+
 export const viewport = {
   width: "device-width",
   initialScale: 1,
@@ -32,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${openSans.variable} antialiased`}
+        className={`${montserrat.variable} ${openSans.variable} ${inter.variable} antialiased`}
       >
         {children}
       </body>
