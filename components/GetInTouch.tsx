@@ -1,12 +1,14 @@
+import { countryCodes } from "@/utils/data/countryCodes";
 import Image from "next/image";
+import CustomInput from "./ui/CustomInput";
 
 const GetInTouch = () => {
   return (
-    <section>
-      <div className=" px-4 pb-20  font-montserrat">
+    <section className="px-4  bg-[#F5F5F8]">
+      <div className=" pb-20   font-montserrat">
         <div>
           <h3 className=" mt-2 text-[24px] uppercase leading-[45px] font-semibold">
-           {`Let’s`} stay connected
+            {`Let’s`} stay connected
           </h3>
           <p className=" font-inter text-[14px] text-divider-300 pb-5">
             At the heart of Enterprise Application Tech LLC is a dedicated team
@@ -24,70 +26,65 @@ const GetInTouch = () => {
           />
         </div>
 
-        <div className=" bg-white mt-10">
-          <span>Still have questions?</span>
-          <h3>Get in touch</h3>
-
-          <form className="space-y-4">
+        <div className=" p-6 py-10 bg-white mt-10">
+          <div className=" uppercase">
+            <span className=" text-[14px] t font-medium">
+              Still have questions?
+            </span>
+            <h3 className=" text-[32px] font-semibold ">Get in touch</h3>
+          </div>
+          <form className="space-y-4 mt-5">
             {/* Full Name */}
-            <div>
-              <label
-                htmlFor="full-name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="full-name"
-                name="full-name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your full name"
-                required
-              />
-            </div>
+
+            <CustomInput
+              type="text"
+              id="full-name"
+              name="full-name"
+              label="Full Name"
+              placeholder="Enter your full name"
+              required
+            />
 
             {/* Email */}
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
+            <CustomInput
+              type="email"
+              id="email"
+              name="email"
+              label="Email"
+              placeholder="Enter your email"
+              required
+            />
 
             {/* Phone Number */}
             <div>
               <label
                 htmlFor="phone-number"
-                className="block text-sm font-medium text-gray-700"
+                className="block  font-medium text-[#414651] text-[14px]  font-montserrat"
               >
                 Phone Number
               </label>
-              <div className="flex">
+              <div className="flex mt-1 border border-divider rounded-[5px] h-[44px] items-center">
                 <select
                   id="country-code"
                   name="country-code"
-                  className="px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="px-3 py-2 border-none rounded-l-md   focus:ring-none  focus:outline-none focus:ring-none"
                 >
-                  <option value="+234">+234</option>
-                  <option value="+1">+1</option>
-                  <option value="+44">+44</option>
+                  {countryCodes.map((country, index) => (
+                    <option
+                      className=" bg-transparent"
+                      key={index}
+                      value={country.code}
+                    >
+                      {country.code}
+                    </option>
+                  ))}
                 </select>
+
                 <input
                   type="tel"
                   id="phone-number"
                   name="phone-number"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-r-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2  text-[14px] rounded-[5px] h-[44px] bg-transparent rounded-r-md focus:outline-none focus:ring-none  outline-none"
                   placeholder="Enter your phone number"
                   required
                 />
@@ -98,14 +95,14 @@ const GetInTouch = () => {
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-gray-700"
+                className="block  font-medium text-[#414651] text-[14px] pb-1  font-montserrat"
               >
                 Your Message
               </label>
               <textarea
                 id="message"
                 name="message"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border   text-[14px]  border-divivder mt-1 rounded-md focus:outline-none focus:ring-none"
                 placeholder="Enter a message..."
                 rows={4}
                 required

@@ -14,6 +14,7 @@ import { teamMembers } from "@/utils/data/teamMembers";
 import TeamCard from "../ui/TeamCard";
 import GetInTouch from "../GetInTouch";
 import Footer from "../Footer";
+import ServiceSection from "../ServiceSection";
 
 const LandingPageUI = () => {
   return (
@@ -73,11 +74,12 @@ const LandingPageUI = () => {
             </p>
           </div>
 
-          <div className="grid px-4 grid-cols-1 mt-[64px] pb-10 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="hidden md:grid px-4 grid-cols-1 mt-[64px] pb-10 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {servicesData.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
           </div>
+          <ServiceSection />
         </div>
       </section>
 
