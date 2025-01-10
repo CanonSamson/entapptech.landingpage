@@ -42,17 +42,13 @@ const ServiceSection: React.FC = () => {
             swiperRef.current = swiper;
           }}
           {...sliderSettings}
+          style={{ paddingRight: "1rem", paddingLeft: "1rem" }}
         >
-          <div className="">
-            {[...servicesData].map((service, index: number) => (
-              <SwiperSlide
-                key={index}
-                className={`${index === 0 ? "  pl-4 " : " "} pr-4`}
-              >
-                <ServiceCard {...service} />
-              </SwiperSlide>
-            ))}
-          </div>
+          {[...servicesData].map((service, index: number) => (
+            <SwiperSlide key={index}>
+              <ServiceCard {...service} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
       <div className=" flex items-center  mt-5 justify-between px-4">

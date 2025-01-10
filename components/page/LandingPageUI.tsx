@@ -15,6 +15,7 @@ import TeamCard from "../ui/TeamCard";
 import GetInTouch from "../GetInTouch";
 import Footer from "../Footer";
 import ServiceSection from "../ServiceSection";
+import Image from "next/image";
 
 const LandingPageUI = () => {
   return (
@@ -106,6 +107,34 @@ const LandingPageUI = () => {
         </div>
       </section>
 
+      <section>
+        <div className=" bg-primary text-white">
+          <Image
+            src="/images/a-man.png"
+            className=" object-cover object-top w-full h-[350px]"
+            width={400}
+            height={400}
+            alt=""
+          />
+          <div className=" px-4 py-10 pb-14">
+            <h2 className=" mt-2 text-[24px] uppercase leading-[45px] font-semibold">
+              Trusted for Cutting-Edge ICT Solutions
+            </h2>
+            <p className="text-[14px] mt-2 leading-[32px] font-inter">
+              From enterprise IT infrastructure to seamless event hall booking
+              systems, our solutions are designed to drive innovation and
+              efficiency. Empower your business with technology that works for
+              you.
+            </p>
+          </div>
+          <div className=" px-4 pb-14">
+            <button className="uppercase  px-4 bg-secondary h-[50px] text-[14px] font-semibold text-white rounded-[5px]">
+              Discover Our ICT Solutions
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section className=" bg-foreground pt-10 ">
         <div>
           <div className=" text-center px-4 ">
@@ -133,13 +162,11 @@ const LandingPageUI = () => {
         <div className="  bg-cover mt-10 py-20  bg-[#0047AB]/95">
           <div className="  px-4 flex flex-col items-center  text-center">
             <h2 className=" mt-2 text-[24px] uppercase leading-[45px] font-semibold">
-              Lorem ipsum
+              Empowering Businesses with Custom Software Solutions for Success
             </h2>
-            <p className="text-[14px] text-divider font-inter ">
-              At the heart of Enterprise Application Tech LLC is a dedicated
-              team of experts committed to crafting innovative solutions. With
-              diverse skills and a shared vision,
-            </p>
+            <button className="  bg-secondary w-full max-w-[75%]  mx-auto px-10 mt-[32px] h-[50px] rounded-[5px] text-white  font-semibold">
+              GET INTOUCH
+            </button>
           </div>
         </div>
       </section>

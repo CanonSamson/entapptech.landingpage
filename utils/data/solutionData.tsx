@@ -1,30 +1,30 @@
 export const solutionData = [
   {
     id: 1,
-    title: "WORKFLOW AUTOMATION",
+    title: "Workflow Automation",
     description:
-      "Simplify And Enhance Your Business Operations With Custom Automation Solutions Tailored To Your Workflow.",
-    image: "/images/pro1-4e06b6ed.png",
+      "Simplify and enhance your business operations with custom automation solutions tailored to your workflow.",
+    image: "/images/ai.png",
   },
   {
     id: 2,
-    title: "WORKFLOW AUTOMATION",
+    title: "Data Management Systems",
     description:
-      "Simplify And Enhance Your Business Operations With Custom Automation Solutions Tailored To Your Workflow.",
-    image: "/images/pro1-4e06b6ed.png",
+      "Empower your organization with secure, efficient platforms for managing and leveraging data effectively.",
+    image: "/images/data-m.png",
   },
   {
     id: 3,
-    title: "WORKFLOW AUTOMATION",
+    title: "Integrated Software Systems",
     description:
-      "Simplify And Enhance Your Business Operations With Custom Automation Solutions Tailored To Your Workflow.",
-    image: "/images/pro1-4e06b6ed.png",
+      "Achieve seamless connectivity across tools with innovative software integration for optimal productivity.",
+    image: "/images/Integrated-image-1.png",
   },
   {
     id: 4,
-    title: "WORKFLOW AUTOMATION",
+    title: "Advanced Analytics Solutions",
     description:
-      "Simplify And Enhance Your Business Operations With Custom Automation Solutions Tailored To Your Workflow.",
-    image: "/images/pro1-4e06b6ed.png",
+      "Gain actionable insights and drive smarter decisions with our tailored analytics and reporting tools.",
+    image: "/images/advanced-solution.png",
   },
 ];

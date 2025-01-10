@@ -5,11 +5,13 @@ import { useState } from "react";
 
 //react icons
 import { FaBars } from "react-icons/fa6";
+import NavigationSlider from "./navigation/NavigationSlider";
 
 const Navigation = () => {
   const [hideNavigation, setHideNavigation] = useState(true);
 
   return (
+   <>
     <div>
       <div className=" flex items-center justify-between px-4  h-[60px]">
         <Image
@@ -24,7 +26,12 @@ const Navigation = () => {
           <FaBars size={20} />
         </button>
       </div>
+
     </div>
+
+    <NavigationSlider hideNavigation={hideNavigation} setHideNavigation={setHideNavigation} />
+    
+    </>
   );
 };
 

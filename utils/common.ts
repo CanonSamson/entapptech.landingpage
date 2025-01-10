@@ -1,6 +1,6 @@
 export const sliderSettings = {
     slidesPerView: 1.2,
-    spaceBetween: 0,
+    spaceBetween: 16,
     speed: 1000,
     breakpoints: {
         480: {
