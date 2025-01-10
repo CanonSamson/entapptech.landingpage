@@ -11,26 +11,27 @@ const Navigation = () => {
   const [hideNavigation, setHideNavigation] = useState(true);
 
   return (
-   <>
-    <div>
-      <div className=" flex items-center justify-between px-4  h-[60px]">
-        <Image
-          src="/icons/Logo.svg"
-          width={100}
-          height={100}
-          alt="entapp tech logo"
-          className=" w-auto h-[32px]"
-        />
+    <>
+      <div>
+        <div className=" flex items-center justify-between px-4  h-[60px]">
+          <Image
+            src="/icons/Logo.svg"
+            width={100}
+            height={100}
+            alt="entapp tech logo"
+            className=" w-auto h-[32px]"
+          />
 
-        <button onClick={() => setHideNavigation(!hideNavigation)}>
-          <FaBars size={20} />
-        </button>
+          <button onClick={() => setHideNavigation(false)}>
+            <FaBars size={20} />
+          </button>
+        </div>
       </div>
 
-    </div>
-
-    <NavigationSlider hideNavigation={hideNavigation} setHideNavigation={setHideNavigation} />
-    
+      <NavigationSlider
+        hideNavigation={hideNavigation}
+        setHideNavigation={setHideNavigation}
+      />
     </>
   );
 };

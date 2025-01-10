@@ -135,7 +135,7 @@ const LandingPageUI = () => {
         </div>
       </section>
 
-      <section className=" bg-foreground pt-10 ">
+      <section className=" bg-foreground pt-10 pb-10 ">
         <div>
           <div className=" text-center px-4 ">
             <SectionTitle title="Our Products" />
@@ -159,19 +159,19 @@ const LandingPageUI = () => {
       </section>
 
       <section className="  text-white bg-stats-mbg  sm:bg-stats-bg ">
-        <div className="  bg-cover mt-10 py-20  bg-[#0047AB]/95">
+        <div className="  bg-cover  py-20  bg-[#0047AB]/95">
           <div className="  px-4 flex flex-col items-center  text-center">
             <h2 className=" mt-2 text-[24px] uppercase leading-[45px] font-semibold">
               Empowering Businesses with Custom Software Solutions for Success
             </h2>
             <button className="  bg-secondary w-full max-w-[75%]  mx-auto px-10 mt-[32px] h-[50px] rounded-[5px] text-white  font-semibold">
-              GET INTOUCH
+              GET IN TOUCH
             </button>
           </div>
         </div>
       </section>
 
-      <section className=" bg-foreground pt-10 ">
+      <section className=" bg-white pt-10 ">
         <div>
           <div className=" text-center px-4 ">
             <SectionTitle title="WHO WE ARE" />
