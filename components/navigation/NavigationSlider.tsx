@@ -1,9 +1,10 @@
 import { menuItems } from "@/utils/data/menuItems";
 import Image from "next/image";
 import Link from "next/link";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+import { enablePageScroll, disablePageScroll } from "scroll-lock";
 
 const NavigationSlider = ({
   hideNavigation,
@@ -12,6 +13,17 @@ const NavigationSlider = ({
   hideNavigation: boolean;
   setHideNavigation: Dispatch<SetStateAction<boolean>>;
 }) => {
+  useEffect(() => {
+    if (!hideNavigation) {
+      return disablePageScroll();
+    }
+
+    enablePageScroll();
+    return () => {
+      enablePageScroll();
+    };
+  }, [hideNavigation]);
+
   return (
     <>
       <button

@@ -4,7 +4,7 @@ export const sliderSettings = {
     speed: 1000,
     breakpoints: {
         480: {
-            slidesPerView: 2.2,
+            slidesPerView: 1.4,
         },
         600: {
             slidesPerView: 2.2,

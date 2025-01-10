@@ -28,7 +28,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
         type={type}
         id={id}
         name={name}
-        className="w-full mt-1 px-4  text-[14px]  font-medium font-inter h-[44px] py-2 border border-divider rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full mt-1 px-4  text-[14px]  font-medium font-inter h-[44px] py-2 border border-divider rounded-md focus:outline-none "
         placeholder={placeholder}
         required={required}
       />
