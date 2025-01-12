@@ -14,7 +14,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   description,
 }) => {
   return (
-    <div className="bg-white p-6   pr-[20%] h-[300px]  items-start justify-center  py-10 flex flex-col items-xtart text-start">
+    <div className="bg-white p-6   pr-[20%] md:pr-6 h-[300px]  items-start justify-center  py-10 flex flex-col items-xtart text-start">
       <div>
         <Image
           src={icon}

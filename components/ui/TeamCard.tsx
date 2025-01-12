@@ -18,7 +18,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ image, name, role }) => {
         className="w-full h-[300px] object-cover"
       />
       <div className="py-4">
-        <h3 className="text-[24px] font-medium mb-2">{name}</h3>
+        <h3 className="text-[24px] font-medium mb-2 ">{name}</h3>
         <div className=" flex items-center gap-1">
           <div className="w-[24px] border-b border-divider-300" />
 

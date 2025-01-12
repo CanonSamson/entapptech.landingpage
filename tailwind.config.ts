@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 export default {
   content: [
@@ -28,5 +29,20 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addBase, addComponents }) {
+      addBase({});
+      addComponents({
+        ".max-width": {
+          "@apply md:max-w-[1200px] mx-auto w-full": {},
+        },
+        ".main-header": {
+          "@apply text-[24px] md:text-[32px] md:leading-[64px] uppercase leading-[45px] font-semibold": {},
+        },
+        ".main-h5": {
+          "@apply text-[14px] md:text-[18px] md:leading-[32px]": {},
+        },
+      });
+    }),
+  ],
 } satisfies Config;

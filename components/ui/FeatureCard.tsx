@@ -14,15 +14,15 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   icon,
 }) => {
   return (
-    <div className="flex flex-col  font-montserrat items-center">
+    <div className="flex flex-col font-montserrat items-center">
       <Image
         src={image}
         alt={title}
-        className="w-full md:w-1/3 object-cover"
+        className="w-full  object-cover"
         width={300}
         height={300}
       />
-      <div className="px-6 pb-6 border border-divider border-t-[0px] relative">
+      <div className="px-6 pb-6  border border-divider border-t-[0px] relative">
         <div className=" bg-secondary inline-flex relative p-4 rounded-[5px] top-[-30px]">
           <Image
             src={icon}
@@ -32,8 +32,10 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
             height={26}
           />
         </div>
-        <h3 className="text-xl  mb-2 font-medium">{title}</h3>
-        <p className="text-divider-300 font-openSans">{description}</p>
+        <div className=" min-h-[170px]">
+          <h3 className="text-xl  mb-2 font-medium">{title}</h3>
+          <p className="text-divider-300 font-openSans">{description}</p>
+        </div>
       </div>
     </div>
   );
