@@ -1,3 +1,5 @@
+import { ChangeEventHandler } from "react";
+
 // Define the props type
 interface CustomInputProps {
   label: string;
@@ -6,6 +8,7 @@ interface CustomInputProps {
   name: string;
   placeholder?: string;
   required?: boolean;
+  onChange?: ChangeEventHandler<HTMLInputElement> | undefined
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -15,6 +18,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
   name,
   placeholder,
   required = false,
+  onChange
 }) => {
   return (
     <div>
@@ -31,6 +35,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
         className="w-full mt-1 px-4  text-[14px]  font-medium font-inter h-[44px] py-2 border border-divider rounded-md focus:outline-none "
         placeholder={placeholder}
         required={required}
+        onChange={onChange}
       />
     </div>
   );

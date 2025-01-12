@@ -19,10 +19,34 @@ const HeaderBanner = () => {
         </div>
         <div className=" flex  items-center gap-10">
           <div className=" flex items-center gap-5">
-            <FaTwitter size={16} />
-            <FaFacebookF size={16} />
-            <FaLinkedinIn size={16} />
-            <FaSlack size={16} />
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTwitter size={16} />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF size={16} />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedinIn size={16} />
+            </a>
+            <a
+              href="https://slack.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaSlack size={16} />
+            </a>
           </div>
           <button className=" uppercase bg-secondary h-ful py-3 px-5">
             Fix an appointment
