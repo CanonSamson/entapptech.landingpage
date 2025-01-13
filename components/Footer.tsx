@@ -3,7 +3,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <div className=" bg-primary  text-white py-5 px-4">
-      <footer className=" max-width gap-5 md:flex md:justify-between md:items-center ">
+      <footer className=" max-width md:max-w-[1000px]  gap-5 md:flex md:justify-between md:items-center ">
         <Image
           src="/icons/Logo.svg"
           width={100}
