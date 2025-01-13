@@ -60,11 +60,10 @@ const NavigationSlider = ({
                 className="border-b border-divider-100  py-4 last:border-none"
               >
                 <Link href={item.href}>
-                  <div className="flex justify-between items-center py-4 px-6 hover:bg-gray-100">
+                  <div className="flex justify-between items-center  py-[1vh] px-6 hover:bg-gray-100">
                     <span className="text-[14px]  uppercase font-medium text-[#081127]">
                       {item.name}
                     </span>
-
                     <IoIosArrowForward size={16} />
                   </div>
                 </Link>
@@ -73,7 +72,7 @@ const NavigationSlider = ({
           </div>
         </div>
         <div className=" px-4 mt-14">
-          <button className="uppercase  w-full px-4 bg-secondary h-[50px] text-[14px] font-semibold text-white rounded-[5px]">
+          <button className="uppercase  hover:scale-95 duration-500 transition-all  w-full px-4 bg-secondary h-[50px] text-[14px] font-semibold text-white rounded-[5px]">
             DISCOVER MORE
           </button>
         </div>

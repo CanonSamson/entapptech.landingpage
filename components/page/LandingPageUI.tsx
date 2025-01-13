@@ -16,6 +16,7 @@ import GetInTouch from "../GetInTouch";
 import Footer from "../Footer";
 import ServiceSection from "../ServiceSection";
 import Image from "next/image";
+import GetInTouchButton from "../button/GetInTouchButton";
 
 const LandingPageUI = () => {
   return (
@@ -37,12 +38,12 @@ const LandingPageUI = () => {
             </div>
             <div className=" md:flex-row w-full uppercase flex flex-col gap-[30px] mt-[64px]">
               <Link href={"#"}>
-                <button className="uppercase md:px-5 w-full bg-secondary h-[50px] text-[14px] font-semibold text-white rounded-[5px]">
+                <button className="uppercase md:px-5 w-full bg-secondary hover:scale-95 duration-500 transition-all h-[50px] text-[14px] font-semibold text-white rounded-[5px]">
                   learn more{" "}
                 </button>
               </Link>
               <Link href={"#"}>
-                <button className=" border-2 md:px-5  border-white font-semibold h-[50px] text-[14px] text-white  uppercase w-full rounded-[5px]">
+                <button className=" border-2 md:px-5 hover:scale-95 duration-500 transition-all border-white font-semibold h-[50px] text-[14px] text-white  uppercase w-full rounded-[5px]">
                   contact us
                 </button>
               </Link>
@@ -138,7 +139,7 @@ const LandingPageUI = () => {
               </p>
             </div>
             <div className=" px-4 pb-14">
-              <button className="uppercase  px-4 bg-secondary h-[50px] text-[14px] font-semibold text-white rounded-[5px]">
+              <button className="uppercase hover:scale-95 duration-500 transition-all   px-4 bg-secondary h-[50px] text-[14px] font-semibold text-white rounded-[5px]">
                 Discover Our ICT Solutions
               </button>
             </div>
@@ -175,9 +176,7 @@ const LandingPageUI = () => {
             <h2 className=" mt-2 text-[24px] md:text-[32px] md:leading-[64px] uppercase leading-[45px] font-semibold">
               Empowering Businesses with Custom Software Solutions for Success
             </h2>
-            <button className=" max-w-[200px]  bg-secondary w-full   mx-auto px-10 mt-[32px] h-[50px] rounded-[5px] text-white  font-semibold">
-              GET IN TOUCH
-            </button>
+            <GetInTouchButton />
           </div>
         </div>
       </section>
@@ -204,6 +203,7 @@ const LandingPageUI = () => {
             ))}
           </div>
         </div>
+        <div id="get-in-touch" />
       </section>
 
       <GetInTouch />

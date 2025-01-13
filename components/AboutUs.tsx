@@ -35,7 +35,7 @@ const AboutUs = () => {
               solutions that fit their unique needs.
             </p>
             <div className=" mt-5 flex justify-end">
-              <button className="  text-secondary items-center flex gap-4">
+              <button className="  hover:font-semibold duration-500 transition-all  text-secondary items-center flex gap-4">
                 <span className=" italic">Learn more about us</span>
                 <BsArrowRight size={24} />
               </button>

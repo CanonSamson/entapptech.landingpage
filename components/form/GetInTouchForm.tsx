@@ -4,8 +4,11 @@ import { countryCodes } from "@/utils/data/countryCodes";
 import CustomInput from "../ui/CustomInput";
 import { useState } from "react";
 import { toast, Toaster } from "sonner";
+import { contactUsEmail } from "@/utils/email-functions";
+import { AiOutlineLoading } from "react-icons/ai";
 
 const GetInTouchForm = () => {
+  const [loading, setLoading] = useState(false);
   const [values, setValues] = useState({
     fullName: "",
     email: "",
@@ -14,22 +17,51 @@ const GetInTouchForm = () => {
     countryCode: "",
   });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     let errorsMessage = "";
 
+    // Check for required fields
     if (!values.fullName.trim()) {
       errorsMessage += "Full Name is required. ";
-    } else if (!values.email.trim()) {
+    }
+    if (!values.email.trim()) {
       errorsMessage += "Email is required. ";
-    } else if (!values.phoneNumber.trim()) {
+    }
+    if (!values.phoneNumber.trim()) {
       errorsMessage += "Phone Number is required. ";
     }
 
+    // Display error messages if any
     if (errorsMessage) {
       toast.error(errorsMessage.trim());
       return;
+    }
+
+    setValues({
+      fullName: "",
+      email: "",
+      phoneNumber: "",
+      message: "",
+      countryCode: "",
+    });
+    try {
+      setLoading(true);
+      await contactUsEmail({
+        ...values,
+      });
+
+      toast.success(
+        "Your details have been submitted. We will get back to you shortly."
+      );
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        "An error occurred while submitting your details. Please try again."
+      );
+    } finally {
+      setLoading(false);
     }
 
     console.log(values);
@@ -50,6 +82,8 @@ const GetInTouchForm = () => {
             fullName: e.target.value,
           }))
         }
+        value={values.fullName}
+
       />
 
       {/* Email */}
@@ -59,6 +93,7 @@ const GetInTouchForm = () => {
         name="email"
         label="Email"
         placeholder="Enter your email"
+        value={values.email}
         onChange={(e) =>
           setValues((prev) => ({
             ...prev,
@@ -80,7 +115,8 @@ const GetInTouchForm = () => {
             id="country-code"
             name="country-code"
             className="px-3 py-2 border-none rounded-l-md  outline-none   focus:ring-none  h-[44px] bg-transparent shadow-none  focus:outline-none focus:ring-none"
-            defaultValue="+234"
+            defaultValue="+44"
+            value={values.countryCode}
             onChange={(e) =>
               setValues((prev) => ({
                 ...prev,
@@ -111,6 +147,7 @@ const GetInTouchForm = () => {
                 phoneNumber: e.target.value,
               }))
             }
+            value={values.phoneNumber}
           />
         </div>
       </div>
@@ -141,9 +178,16 @@ const GetInTouchForm = () => {
       {/* Submit Button */}
       <button
         type="submit"
-        className="w-full max-w-[170px] h-[50px]  uppercase text-[14px] bg-yellow-500 text-white px-4 rounded-[5px] font-semibold hover:bg-yellow-600 focus:outline-none"
+        disabled={loading}
+        className=" disabled:opacity-75 w-full   flex items-center justify-center text-center gap-2 max-w-[170px]  h-[50px]  uppercase text-[14px] bg-secondary text-white px-4 rounded-[5px] font-semibold hover:scale-95 duration-500 transition-all "
       >
-        Message Us
+        <span>Message Us</span>
+        {loading && (
+          <AiOutlineLoading
+            size={20}
+            className="  animate-spin duration-500 transition-all"
+          />
+        )}
       </button>
     </form>
   );

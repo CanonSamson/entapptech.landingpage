@@ -11,9 +11,11 @@ export default {
     extend: {
       colors: {
         primary: "var(--primary)",
+        "hover-primary": "var(--hover-primary)",
         divider: "var(--divider)",
         "divider-300": "var(--divider300)",
         secondary: "var(--secondary)",
+        'hover-secondary': "var(--hover-secondary)",
         foreground: "var(--foreground)",
       },
       backgroundImage: {
@@ -34,7 +36,7 @@ export default {
       addBase({});
       addComponents({
         ".max-width": {
-          "@apply md:max-w-[1200px] mx-auto w-full": {},
+          "@apply md:max-w-[1200px] min-[2000px]:max-w-[1600px] mx-auto w-full": {},
         },
         ".main-header": {
           "@apply text-[24px] md:text-[32px] md:leading-[64px] uppercase leading-[45px] font-semibold": {},

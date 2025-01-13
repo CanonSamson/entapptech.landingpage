@@ -9,6 +9,7 @@ interface CustomInputProps {
   placeholder?: string;
   required?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement> | undefined
+  value: string
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -18,6 +19,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
   name,
   placeholder,
   required = false,
+  value,
   onChange
 }) => {
   return (
@@ -36,6 +38,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
         placeholder={placeholder}
         required={required}
         onChange={onChange}
+        value={value}
       />
     </div>
   );
