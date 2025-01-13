@@ -15,7 +15,7 @@ export const teamMembers = [
       id: 3,
       name: "Team Member 3",
       role: "Role In Company",
-      image: "/images/image-1.png", 
+      image: "/images/girl.png", 
     },
     {
       id: 4,
