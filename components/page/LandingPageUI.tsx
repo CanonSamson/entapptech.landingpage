@@ -1,5 +1,6 @@
+"use client";
+
 import Link from "next/link";
-import Navigation from "../Navigation";
 import AboutUs from "../AboutUs";
 import { statsData } from "@/utils/data/statsData";
 import SectionTitle from "../ui/SectionTitle";
@@ -13,18 +14,18 @@ import SolutionCard from "../ui/SolutionCard";
 import { teamMembers } from "@/utils/data/teamMembers";
 import TeamCard from "../ui/TeamCard";
 import GetInTouch from "../GetInTouch";
-import Footer from "../Footer";
 import ServiceSection from "../ServiceSection";
 import Image from "next/image";
 import GetInTouchButton from "../button/GetInTouchButton";
+import { motion } from "framer-motion";
+import { item, parentItem } from "@/utils/motion";
 
 const LandingPageUI = () => {
   return (
     <main className="  font-montserrat ">
-      <Navigation />
-      <section className=" bg-hero-bg  bg-cover">
-        <header className=" md:w-full bg-[#151D3A]/60">
-          <div className="py-24 md:py-40 px-4 max-width">
+      <section className=" z-0  fixed bg-hero-bg  w-full  bg-cover">
+        <header className="  bg-[#151D3A]/60  md:w-full">
+          <div className="py-24 opacity-0 md:py-52 px-4 max-width">
             <div className=" text-white text-center md:text-start">
               <h1 className="  font-semibold md:hidden text-5xl md:text-[64px] md:leading-[80px]  uppercase">
                 Business, Simplifying Complexity.
@@ -52,21 +53,66 @@ const LandingPageUI = () => {
         </header>
       </section>
 
+      <section className=" relative z-20 bg-cover">
+        <header className=" md:w-full">
+          <motion.div {...parentItem} className="py-24 md:py-52 px-4 max-width">
+            <div className=" text-white text-center md:text-start">
+              <motion.h1
+                variants={item}
+                className="  font-semibold md:hidden text-5xl md:text-[64px] md:leading-[80px]  uppercase"
+              >
+                Business, Simplifying Complexity.
+              </motion.h1>
+              <motion.h1
+                variants={item}
+                className=" hidden  font-semibold md:block text-5xl md:text-[64px] md:leading-[80px]  uppercase"
+              >
+                Innovating Business, Simplifying Complexity.
+              </motion.h1>
+              <motion.p
+                variants={item}
+                className="  mt-5 text-[24px] font-openSans"
+              >
+                Transforming businesses through tailored software solutions.
+              </motion.p>
+            </div>
+            <motion.div
+              variants={item}
+              className=" md:flex-row w-full uppercase flex flex-col gap-[30px] mt-[64px]"
+            >
+              <Link href={"#"}>
+                <button className="uppercase md:px-5 w-full bg-secondary hover:scale-95 duration-500 transition-all h-[50px] text-[14px] font-semibold text-white rounded-[5px]">
+                  learn more{" "}
+                </button>
+              </Link>
+              <Link href={"#"}>
+                <button className=" border-2 md:px-5 hover:scale-95 duration-500 transition-all border-white font-semibold h-[50px] text-[14px] text-white  uppercase w-full rounded-[5px]">
+                  contact us
+                </button>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </header>
+      </section>
+
       <AboutUs />
 
-      <section className="  text-white bg-stats-mbg  sm:bg-stats-bg ">
-        <div className="  bg-cover mt-10 md:mt-20 py-20   bg-[#0047AB]/95">
+      <motion.section
+        {...parentItem}
+        className="relative z-20    text-white bg-stats-mbg  sm:bg-stats-bg "
+      >
+        <div className="  bg-cover  py-20   bg-[#0047AB]/95">
           <div className=" flex flex-col md:flex-row  max-width md:px-[10%] items-center space-y-8 md:space-y-0  md:space-x-8">
             {statsData.map((stat, index) => (
               <StatCard key={index} {...stat} />
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className=" bg-foreground py-10 md:py-20">
-        <div className="  max-width ">
-          <div className=" text-center px-4 ">
+      <motion.section className=" relative z-20   bg-foreground py-10 md:py-20">
+        <motion.div {...parentItem} className="  max-width ">
+          <motion.div variants={item} className=" text-center px-4 ">
             <SectionTitle title="What We Do" />
             <h2 className=" mt-2 main-header">Solutions That Drive Success</h2>
             <p className=" main-h5  text-divider-300  font-inter">
@@ -75,20 +121,26 @@ const LandingPageUI = () => {
               complexity and empower your business to thrive in a competitive
               landscape.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="hidden md:grid px-4 grid-cols-1 mt-[64px]  md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <motion.div
+            {...parentItem}
+            className="hidden md:grid px-4 grid-cols-1 mt-[64px]  md:grid-cols-2 lg:grid-cols-3 gap-5"
+          >
             {servicesData.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
-          </div>
+          </motion.div>
           <ServiceSection />
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
-      <section className=" bg-white pt-10 md:pt-20 ">
+      <motion.section
+        {...parentItem}
+        className="relative z-20 bg-white pt-10 md:pt-20 "
+      >
         <div className="  max-width ">
-          <div className=" text-center px-4 ">
+          <motion.div variants={item} className=" text-center px-4 ">
             <SectionTitle title="WHY CHOOSE US?" />
             <h2 className=" mt-2 main-header">
               Why We’re Your Perfect Partner
@@ -99,17 +151,20 @@ const LandingPageUI = () => {
               tailored to your business needs, ensuring seamless success and
               growth.
             </p>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="grid  max-width  px-4 grid-cols-1 mt-[64px] pb-10 md:pb-20 md:grid-cols-3  gap-5">
+        <motion.div
+          {...parentItem}
+          className="grid  max-width  px-4 grid-cols-1 mt-[64px] pb-10 md:pb-20 md:grid-cols-3  gap-5"
+        >
           {featuresData.map((feature, index) => (
             <FeatureCard key={index} {...feature} />
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
-      <section>
+      <section className="relative z-20 ">
         <div className=" bg-primary relative md:flex md:flex-row-reverse text-white">
           <Image
             src="/images/a-man.png"
@@ -126,30 +181,39 @@ const LandingPageUI = () => {
             alt=""
           />
 
-          <div className="  md:absolute md:left-0 h-full flex-col flex items-start md:px-20 justify-center  md:w-[60%] bg-primary">
+          <motion.div
+            {...parentItem}
+            className="  md:absolute md:left-0 h-full flex-col flex items-start md:px-20 justify-center  md:w-[60%] bg-primary"
+          >
             <div className=" px-4 py-10 md:py-auto pb-14">
-              <h2 className=" mt-2 text-[24px] md:text-[32px] md:leading-[64px] uppercase leading-[45px] font-semibold">
+              <motion.h2
+                variants={item}
+                className=" mt-2 text-[24px] md:text-[32px] md:leading-[64px] uppercase leading-[45px] font-semibold"
+              >
                 Trusted for Cutting-Edge ICT Solutions
-              </h2>
-              <p className="text-[14px] mt-2 leading-[32px] md:text-[18px] md:leading-[32px] font-inter">
+              </motion.h2>
+              <motion.p
+                variants={item}
+                className="text-[14px] mt-2 leading-[32px] md:text-[18px] md:leading-[32px] font-inter"
+              >
                 From enterprise IT infrastructure to seamless event hall booking
                 systems, our solutions are designed to drive innovation and
                 efficiency. Empower your business with technology that works for
                 you.
-              </p>
+              </motion.p>
             </div>
-            <div className=" px-4 pb-14">
+            <motion.div variants={item} className=" px-4 pb-14">
               <button className="uppercase hover:scale-95 duration-500 transition-all   px-4 bg-secondary h-[50px] text-[14px] font-semibold text-white rounded-[5px]">
                 Discover Our ICT Solutions
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      <section className=" bg-foreground py-10 md:py-20 ">
-        <div className=" max-width ">
-          <div className=" text-center px-4 ">
+      <section className="relative z-20   bg-foreground py-10 md:py-20 ">
+        <motion.div {...parentItem} className=" max-width ">
+          <motion.div variants={item} className=" text-center px-4 ">
             <SectionTitle title="Our Products" />
             <h2 className=" mt-2 main-header">
               Our Innovative Product Solutions
@@ -160,30 +224,39 @@ const LandingPageUI = () => {
               productivity. From mobile applications to robust cloud platforms,
               our products drive modern businesses toward success.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid px-4 grid-cols-2  mt-[64px] md:grid-cols-2  gap-5 md:gap-10">
+          <motion.div
+            {...parentItem}
+            className="grid px-4 grid-cols-2  mt-[64px] md:grid-cols-2  gap-5 md:gap-10"
+          >
             {solutionData.map((solution, index) => (
               <SolutionCard key={index} {...solution} />
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
-      <section className="  text-white bg-stats-mbg  sm:bg-stats-bg ">
+      <section className=" relative z-20  text-white bg-stats-mbg  sm:bg-stats-bg ">
         <div className="  bg-cover  py-20  bg-[#0047AB]/95 md:bg-[#0047AB]/60">
-          <div className=" max-width  px-4 flex flex-col items-center  text-center">
-            <h2 className=" mt-2 text-[24px] md:text-[32px] md:leading-[64px] uppercase leading-[45px] font-semibold">
+          <motion.div
+            {...parentItem}
+            className=" max-width  px-4 flex flex-col items-center  text-center"
+          >
+            <motion.h2
+              variants={item}
+              className=" mt-2 text-[24px] md:text-[32px] md:leading-[64px] uppercase leading-[45px] font-semibold"
+            >
               Empowering Businesses with Custom Software Solutions for Success
-            </h2>
+            </motion.h2>
             <GetInTouchButton />
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className=" bg-white py-10  md:py-20">
-        <div className=" max-width">
-          <div className=" text-center px-4 ">
+      <section className=" relative z-20   bg-white py-10  md:py-20">
+        <motion.div {...parentItem} className=" max-width">
+          <motion.div variants={item} className=" text-center px-4 ">
             <SectionTitle title="WHO WE ARE" />
             <h2 className=" mt-2 main-header">
               Meet the Team Behind the Innovation
@@ -195,19 +268,21 @@ const LandingPageUI = () => {
               complex challenges into impactful software solutions that drive
               growth and success.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid px-4 grid-cols-1 md:grid-cols-4 mt-[64px]    gap-5">
+          <motion.div
+            {...parentItem}
+            className="grid px-4 grid-cols-1 md:grid-cols-4 mt-[64px]    gap-5"
+          >
             {teamMembers.map((solution, index) => (
               <TeamCard key={index} {...solution} />
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         <div id="get-in-touch" />
       </section>
 
       <GetInTouch />
-      <Footer />
     </main>
   );
 };

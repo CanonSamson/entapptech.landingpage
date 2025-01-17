@@ -1,5 +1,8 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { item } from "@/utils/motion";
+
 
 // Define the props interface
 interface ServiceCardProps {
@@ -13,8 +16,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   description,
 }) => {
+
+ 
   return (
-    <div className="bg-white p-6   pr-[20%] md:pr-6 h-[300px]  items-start justify-center  py-10 flex flex-col items-xtart text-start">
+    <motion.div
+    variants={item}
+    
+    className="bg-white p-6   pr-[20%] md:pr-6 h-[300px]  items-start justify-center  py-10 flex flex-col items-xtart text-start">
       <div>
         <Image
           src={icon}
@@ -29,7 +37,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         {title}
       </h3>
       <p className="text-divider-300 font-openSans">{description}</p>
-    </div>
+    </motion.div>
   );
 };
 

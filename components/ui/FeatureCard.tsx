@@ -1,4 +1,6 @@
+import { item } from "@/utils/motion";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface FeatureCardProps {
   image: string;
@@ -14,7 +16,10 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   icon,
 }) => {
   return (
-    <div className="flex flex-col font-montserrat items-center">
+    <motion.div
+      variants={item}
+      className="flex flex-col font-montserrat items-center"
+    >
       <Image
         src={image}
         alt={title}
@@ -37,7 +42,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           <p className="text-divider-300 font-openSans">{description}</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,19 +1,51 @@
 import Image from "next/image";
 import SectionTitle from "./ui/SectionTitle";
 import { BsArrowRight } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const AboutUs = () => {
+  const item = {
+    hidden: {
+      y: 70,
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+        duration: 0.5,
+        repeat: 0,
+      },
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.5,
+        duration: 0.5,
+        repeat: 0,
+      },
+    },
+  };
+
   return (
-    <section>
-      <div className=" max-width">
-        <div className=" mt-10 md:mt-20 text-center px-4 ">
+    <section className=" relative  pt-10 md:pt-20 z-20 pb-10 md:pb-20  bg-white">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={item}
+        className=" max-width"
+      >
+        <motion.div variants={item} className=" text-center px-4 ">
           <SectionTitle title="About us" />
           <h2 className=" mt-2 md:hidden text-[24px] uppercase leading-[45px] font-semibold">
             Discover Our Passion for Innovation
           </h2>
-        </div>
+        </motion.div>
 
-        <div className=" flex flex-col md:grid md:grid-cols-2 md:gap-10 gap-4 mt-10 px-4">
+        <motion.div
+          variants={item}
+          className=" flex flex-col md:grid md:grid-cols-2 md:gap-10 gap-4 mt-10 px-4"
+        >
           <Image
             height={200}
             width={200}
@@ -41,8 +73,8 @@ const AboutUs = () => {
               </button>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

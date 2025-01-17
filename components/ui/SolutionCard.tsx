@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { BsArrowUpRight } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { item } from "@/utils/motion";
 
 // Define the props interface
 interface SolutionCardProps {
@@ -14,7 +16,7 @@ const SolutionCard: React.FC<SolutionCardProps> = ({
   description,
 }) => {
   return (
-    <div className=" font-montserrat">
+    <motion.div variants={item} className=" font-montserrat">
       <Image
         src={image}
         alt={title}
@@ -24,7 +26,9 @@ const SolutionCard: React.FC<SolutionCardProps> = ({
       />
       <div className="py-4 flex items-end   gap-5">
         <div className=" ">
-          <h3 className="text-[14px] md:text-[24px]  font-medium mb-2">{title}</h3>
+          <h3 className="text-[14px] md:text-[24px]  font-medium mb-2">
+            {title}
+          </h3>
           <p className="text-divider-300 md:text-[16px] text-[12px] font-openSans">
             {description}
           </p>
@@ -34,7 +38,7 @@ const SolutionCard: React.FC<SolutionCardProps> = ({
           <BsArrowUpRight size={20} />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

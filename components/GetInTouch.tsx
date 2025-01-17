@@ -1,11 +1,19 @@
 import Image from "next/image";
 import GetInTouchForm from "./form/GetInTouchForm";
+import { motion } from "framer-motion";
+import { item, parentItem } from "@/utils/motion";
 
 const GetInTouch = () => {
   return (
-    <section className="px-4 py-16 md:py-20 bg-[#F5F5F8]">
-      <div className=" font-montserrat  max-width gap-10  flex flex-col md:flex-row">
-        <div className=" md:w-[60%] flex flex-col gap-10 justify-between">
+    <section className="relative z-20 px-4 py-16 md:py-20 bg-[#F5F5F8]">
+      <motion.div
+        {...parentItem}
+        className=" font-montserrat  max-width gap-10  flex flex-col md:flex-row"
+      >
+        <motion.div
+          variants={item}
+          className=" md:w-[60%] flex flex-col gap-10 justify-between"
+        >
           <div>
             <h3 className="  text-[24px] md:text-[32px] md:leading-[64px]  uppercase leading-[45px] font-semibold">
               {`Let’s`} stay connected
@@ -25,9 +33,9 @@ const GetInTouch = () => {
             height={200}
             alt=""
           />
-        </div>
+        </motion.div>
 
-        <div className=" flex-1 p-6 py-10 bg-white">
+        <motion.div variants={item} className=" flex-1 p-6 py-10 bg-white">
           <div className=" uppercase">
             <span className=" text-[14px] text-divider-300 font-medium">
               Still have questions?
@@ -35,8 +43,8 @@ const GetInTouch = () => {
             <h3 className=" text-[32px] font-semibold ">Get in touch</h3>
           </div>
           <GetInTouchForm />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

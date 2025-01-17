@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { item } from "@/utils/motion";
+import { motion } from "framer-motion";
 
 // Define the props interface
 interface TeamCardProps {
@@ -9,7 +11,7 @@ interface TeamCardProps {
 
 const TeamCard: React.FC<TeamCardProps> = ({ image, name, role }) => {
   return (
-    <div className=" font-montserrat">
+    <motion.div variants={item} className=" font-montserrat">
       <Image
         src={image}
         alt={name}
@@ -27,7 +29,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ image, name, role }) => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

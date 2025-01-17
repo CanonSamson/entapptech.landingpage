@@ -1,6 +1,7 @@
 import { menuItems } from "@/utils/data/menuItems";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
@@ -13,6 +14,8 @@ const NavigationSlider = ({
   hideNavigation: boolean;
   setHideNavigation: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const pathname = usePathname();
+
   useEffect(() => {
     if (!hideNavigation) {
       return disablePageScroll();
@@ -60,7 +63,11 @@ const NavigationSlider = ({
                 className="border-b border-divider-100  py-4 last:border-none"
               >
                 <Link href={item.href}>
-                  <div className="flex justify-between items-center  py-[1vh] px-6 hover:bg-gray-100">
+                  <div
+                    className={`${
+                      pathname.includes(item.href) ? "text-secondary" : ""
+                    } duration-500 transition-all flex justify-between items-center  py-[1vh] px-6 hover:bg-gray-100`}
+                  >
                     <span className="text-[14px]  uppercase font-medium text-[#081127]">
                       {item.name}
                     </span>

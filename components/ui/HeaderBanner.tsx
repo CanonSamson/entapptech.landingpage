@@ -3,10 +3,14 @@ import { TbClockHour4 } from "react-icons/tb";
 import { FaFacebookF, FaTwitter, FaSlack } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa6";
 
-const HeaderBanner = () => {
+const HeaderBanner = ({ scroll }: { scroll: boolean }) => {
   return (
-    <div className=" text-white  px-4  bg-primary hidden md:flex items-center text-[14px] font-montserrat">
-      <div className=" text-white  px-4 items-center hidden md:flex justify-between max-width ">
+    <div
+      className={`text-white  px-4  bg-primary hidden  overflow-hidden md:flex duration-500 transition-all items-center text-[14px] font-montserrat top-0 sticky ${
+        scroll ? " h-[0px]" : "h-[50px]"
+      }`}
+    >
+      <div className=" text-white  px-4 items-center flex-1 hidden md:flex justify-between max-width ">
         <div className=" flex items-center gap-5">
           <div className=" flex items-center gap-2">
             <TbClockHour4 size={16} className=" text-secondary" />
@@ -17,7 +21,7 @@ const HeaderBanner = () => {
             <span>(+44) 84783 48293</span>
           </div>
         </div>
-        <div className=" flex  items-center gap-10">
+        <div className=" flex  flex-1  justify-end items-center gap-10">
           <div className=" flex items-center gap-5">
             <a
               href="https://twitter.com"
@@ -48,7 +52,11 @@ const HeaderBanner = () => {
               <FaSlack size={16} />
             </a>
           </div>
-          <button className=" uppercase bg-secondary h-ful py-3 px-5">
+          <button
+            className={`uppercase bg-secondary px-5 overflow-hidden  items-center justify-center duration-500 transition-all ${
+              scroll ? " h-[0px] overflow-hidden" : "h-[50px]"
+            }`}
+          >
             Fix an appointment
           </button>
         </div>
