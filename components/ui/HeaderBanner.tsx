@@ -2,12 +2,14 @@ import { LuPhone } from "react-icons/lu";
 import { TbClockHour4 } from "react-icons/tb";
 import { FaFacebookF, FaTwitter, FaSlack } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa6";
+import { motion } from "framer-motion";
+
 
 const HeaderBanner = ({ scroll }: { scroll: boolean }) => {
   return (
-    <div
-      className={`text-white  px-4  bg-primary hidden  overflow-hidden md:flex duration-500 transition-all items-center text-[14px] font-montserrat top-0 sticky ${
-        scroll ? " h-[0px]" : "h-[50px]"
+    <motion.div
+      className={`text-white  px-4  bg-primary  h-[0px]  overflow-hidden flex duration-500 transition-all items-center text-[14px] font-montserrat top-0 sticky ${
+        scroll ? " md:h-[0px]" : "md:h-[50px]"
       }`}
     >
       <div className=" text-white  px-4 items-center flex-1 hidden md:flex justify-between max-width ">
@@ -61,7 +63,7 @@ const HeaderBanner = ({ scroll }: { scroll: boolean }) => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

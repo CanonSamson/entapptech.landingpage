@@ -8,7 +8,7 @@ const PageHeroSection = ({ title, bg }: { title: string; bg?: string }) => {
         className={` z-0  fixed  w-full  bg-cover ${bg ? bg : " bg-hero-bg"}`}
       >
         <header className="  bg-[#151D3A]/60  md:w-full">
-          <div className="py-24 opacity-0 md:py-56 px-4 max-width">
+          <div className="py-40 opacity-0 md:py-56 px-4 max-width">
             <div className=" text-white text-center md:text-start">
               <motion.h1
                 variants={item}
@@ -23,7 +23,7 @@ const PageHeroSection = ({ title, bg }: { title: string; bg?: string }) => {
 
       <section className=" relative z-20 bg-cover">
         <header className=" md:w-full">
-          <motion.div {...parentItem} className="py-24 md:py-56 px-4 max-width">
+          <motion.div {...parentItem} className="py-40 md:py-56 px-4 max-width">
             <div className=" text-white text-center md:text-start">
               <motion.h1
                 variants={item}

@@ -23,6 +23,7 @@ import { item, parentItem } from "@/utils/motion";
 const LandingPageUI = () => {
   return (
     <main className="  font-montserrat ">
+
       <section className=" z-0  fixed bg-hero-bg  w-full  bg-cover">
         <header className="  bg-[#151D3A]/60  md:w-full">
           <div className="py-24 opacity-0 md:py-52 px-4 max-width">

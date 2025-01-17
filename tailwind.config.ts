@@ -19,9 +19,13 @@ export default {
         foreground: "var(--foreground)",
       },
       backgroundImage: {
+        'contact-hero-bg': "url('/images/contact-hero-bg.png')",
         'hero-bg': "url('/images/hero-image.png')",
+        'about-us-hero': "url('/images/about-us-hero.png')",
+        'company-hero': "url('/images/company-hero.png')",
         'stats-bg': "url('/images/stats-bg.png')",
         'stats-mbg': "url('/images/stats-bg-m.png')",
+        
       },
       fontFamily: {
         openSans: "var(--font-openSans)",

@@ -32,23 +32,25 @@ const NavigationSlider = ({
       <button
         className={`${
           hideNavigation ? " hidden" : "flex"
-        }  bg-black/10 z-20 fixed top-0  h-screen w-full right-0`}
+        }  bg-black/10 fixed top-0  h-screen w-full right-0 z-[50]`}
         onClick={() => setHideNavigation(true)}
       />
 
       <div
-        className={` md:hidden w-[80%] fixed top-0  h-screen bg-white z-30  transform transition-all duration-500  ${
+        className={` md:hidden w-[80%] fixed top-0  h-screen bg-white z-[60]  transform transition-all duration-500  ${
           hideNavigation ? " right-[-1000%]" : "right-0"
         }`}
       >
         <div className=" flex items-center justify-between px-4  h-[60px]">
-          <Image
-            src="/icons/Logo.svg"
-            width={100}
-            height={100}
-            alt="entapp tech logo"
-            className=" w-auto h-[32px]"
-          />
+          <Link href={`/`}>
+            <Image
+              src="/icons/Logo.svg"
+              width={100}
+              height={100}
+              alt="entapp tech logo"
+              className=" w-auto h-[32px]"
+            />
+          </Link>
 
           <button onClick={() => setHideNavigation(true)} className="  py-1">
             <IoClose size={24} />

@@ -42,7 +42,6 @@ export default function RootLayout({
         className={`${montserrat.variable} ${openSans.variable} ${inter.variable} antialiased`}
       >
         <Navigation />
-
         {children}
         <Footer />
       </body>

@@ -14,35 +14,6 @@ import HeaderBanner from "./ui/HeaderBanner";
 import { usePathname } from "next/navigation";
 import { menuItems } from "@/utils/data/menuItems";
 
-const item = {
-  hidden: {
-    y: -70,
-    opacity: 0,
-    transition: {
-      when: "afterChildren",
-      duration: 0.5,
-      repeat: 0,
-    },
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.5,
-      duration: 0.5,
-      repeat: 0,
-    },
-  },
-};
-
-const parentItem = {
-  initial: "hidden",
-  whileInView: "visible",
-  viewport: { once: true },
-  variants: item,
-};
-
 const Navigation = () => {
   const [hideNavigation, setHideNavigation] = useState(true);
   const [scroll, setScroll] = useState(false);
@@ -71,20 +42,19 @@ const Navigation = () => {
 
   return (
     <>
-      <motion.div
-        {...parentItem}
-        className="   z-40  fixed  top-0 w-full  bg-white    "
-      >
+      <motion.div className="   z-50  flex flex-col  fixed  top-0 w-full  bg-white    ">
         <HeaderBanner scroll={scroll} />
-        <div className=" w-full flex items-center justify-between px-4  max-width h-[60px]">
-          <Image
-            src="/icons/Logo.svg"
-            width={100}
-            height={100}
-            alt="entapp tech logo"
-            className=" w-auto h-[32px]"
-          />
 
+        <div className=" w-full flex items-center justify-between px-4  max-width  h-[60px]">
+          <Link href={`/`}>
+            <Image
+              src="/icons/Logo.svg"
+              width={100}
+              height={100}
+              alt="entapp tech logo"
+              className=" w-auto h-[32px]"
+            />
+          </Link>
           <button
             onClick={() => setHideNavigation(false)}
             className=" md:hidden"
@@ -92,7 +62,7 @@ const Navigation = () => {
             <FaBars size={20} />
           </button>
           <nav className=" hidden md:block">
-            <ul className="flex text-[14px] font-medium  space-x-4">
+            <ul className="flex text-[14px]  uppercase font-medium  space-x-4">
               {menuItems.map((item, index) => (
                 <li key={index}>
                   <Link

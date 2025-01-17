@@ -15,7 +15,7 @@ import PageHeroSection from "../ui/PageHeroSection";
 const CompanyPageUI = () => {
   return (
     <main className="  font-montserrat ">
-      <PageHeroSection title="Company" />
+      <PageHeroSection title="Company" bg={`bg-company-hero`} />
 
       <motion.section className=" relative z-20   bg-foreground py-10 md:py-20">
         <motion.div {...parentItem} className="  max-width ">

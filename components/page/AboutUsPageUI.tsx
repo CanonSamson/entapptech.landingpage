@@ -15,7 +15,7 @@ import { BsArrowRight } from "react-icons/bs";
 const AboutUsPageUI = () => {
   return (
     <main className="  font-montserrat ">
-      <PageHeroSection title="ABOUT US" />
+      <PageHeroSection title="ABOUT US" bg="bg-about-us-hero" />
 
       <section className=" relative  pt-10 md:pt-20 z-20 pb-10 md:pb-20  bg-white">
         <motion.div
