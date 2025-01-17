@@ -26,7 +26,7 @@ const LandingPageUI = () => {
 
       <section className=" z-0  fixed bg-hero-bg  w-full  bg-cover">
         <header className="  bg-[#151D3A]/60  md:w-full">
-          <div className="py-24 opacity-0 md:py-52 px-4 max-width">
+          <div className="py-40 opacity-0 md:py-52 px-4 max-width">
             <div className=" text-white text-center md:text-start">
               <h1 className="  font-semibold md:hidden text-5xl md:text-[64px] md:leading-[80px]  uppercase">
                 Business, Simplifying Complexity.
@@ -44,7 +44,7 @@ const LandingPageUI = () => {
                   learn more{" "}
                 </button>
               </Link>
-              <Link href={"#"}>
+              <Link href={"/contact"}>
                 <button className=" border-2 md:px-5 hover:scale-95 duration-500 transition-all border-white font-semibold h-[50px] text-[14px] text-white  uppercase w-full rounded-[5px]">
                   contact us
                 </button>
@@ -56,7 +56,7 @@ const LandingPageUI = () => {
 
       <section className=" relative z-20 bg-cover">
         <header className=" md:w-full">
-          <motion.div {...parentItem} className="py-24 md:py-52 px-4 max-width">
+          <motion.div {...parentItem} className="py-40 md:py-52 px-4 max-width">
             <div className=" text-white text-center md:text-start">
               <motion.h1
                 variants={item}
@@ -86,7 +86,7 @@ const LandingPageUI = () => {
                   learn more{" "}
                 </button>
               </Link>
-              <Link href={"#"}>
+              <Link href={"/contact"}>
                 <button className=" border-2 md:px-5 hover:scale-95 duration-500 transition-all border-white font-semibold h-[50px] text-[14px] text-white  uppercase w-full rounded-[5px]">
                   contact us
                 </button>
