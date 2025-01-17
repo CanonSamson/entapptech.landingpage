@@ -14,13 +14,7 @@ const AboutUsPageUI = () => {
       <PageHeroSection title="ABOUT US" bg="bg-about-us-hero" />
 
       <section className=" relative  pt-10 md:pt-20 z-20 pb-10 md:pb-20  bg-white">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={item}
-          className=" max-width"
-        >
+        <motion.div {...parentItem} className=" max-width">
           <motion.div
             variants={item}
             className=" flex flex-col md:grid md:grid-cols-2 md:gap-10 gap-4 mt-10 px-4"

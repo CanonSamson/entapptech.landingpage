@@ -42,7 +42,7 @@ const NavigationSlider = ({
         }`}
       >
         <div className=" flex items-center justify-between px-4  h-[60px]">
-          <Link href={`/`}>
+          <Link onClick={() => setHideNavigation(false)} href={`/`}>
             <Image
               src="/icons/Logo.svg"
               width={100}
@@ -64,13 +64,17 @@ const NavigationSlider = ({
                 key={index}
                 className="border-b border-divider-100  py-4 last:border-none"
               >
-                <Link href={item.href}>
+                <Link onClick={() => setHideNavigation(true)} href={item.href}>
                   <div
                     className={`${
                       pathname.includes(item.href) ? "text-secondary" : ""
                     } duration-500 transition-all flex justify-between items-center  py-[1vh] px-6 hover:bg-gray-100`}
                   >
-                    <span className="text-[14px]  uppercase font-medium text-[#081127]">
+                    <span
+                      className={`text-[14px]  uppercase font-medium text-[#081127] ${
+                        pathname.includes(item.href) ? "text-secondary" : ""
+                      }`}
+                    >
                       {item.name}
                     </span>
                     <IoIosArrowForward size={16} />
@@ -81,7 +85,11 @@ const NavigationSlider = ({
           </div>
         </div>
         <div className=" px-4 mt-14">
-          <button className="uppercase  hover:scale-95 duration-500 transition-all  w-full px-4 bg-secondary h-[50px] text-[14px] font-semibold text-white rounded-[5px]">
+          <button
+            onClick={() => setHideNavigation(true)}
+            className="uppercase  hover:scale-95 duration-500 transition-all 
+           w-full px-4 bg-secondary h-[50px] text-[14px] font-semibold text-white rounded-[5px]"
+          >
             DISCOVER MORE
           </button>
         </div>
