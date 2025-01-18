@@ -17,7 +17,7 @@ export async function generateMetadata({}: Props, parent: ResolvingMetadata) {
     openGraph: {
       title: "ENTAPP TECH",
       description:
-        "Transforming businesses through tailored software solutions.", // Open Graph description
+        "Transforming businesses through tailored software solutions.", 
       images: [
         "https://i.ibb.co/FDKV2gG/Hero-Section-2.png",
         ...previousImages,
