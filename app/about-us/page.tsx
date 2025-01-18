@@ -1,4 +1,3 @@
-"use client"
 
 import AboutUsPageUI from "@/components/page/AboutUsPageUI";
 import { Metadata } from "next";
