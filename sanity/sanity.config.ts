@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'entapptech-website',
   title: 'Entapp Tech Website',
 
-  projectId: "g5g7vown"|| 'your-project-id',
-  dataset: "production"|| 'production',
+  projectId: "g5g7vown",
+  dataset: "production",
 
   plugins: [structureTool(), visionTool()],
 
