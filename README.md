@@ -34,3 +34,46 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Sanity CMS Setup
+
+This project uses Sanity CMS for managing team details and contact information.
+
+### 1. Create a Sanity Project
+
+If you don't have a Sanity project yet, create one at [sanity.io/manage](https://www.sanity.io/manage).
+
+### 2. Set Environment Variables
+
+Create a `.env.local` file in the root directory with your Sanity credentials:
+
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID=your-project-id
+NEXT_PUBLIC_SANITY_DATASET=production
+```
+
+### 3. Run Sanity Studio
+
+To manage content in the Sanity Studio:
+
+```bash
+npx sanity sanity init
+```
+
+Or if you already have a project, link it:
+
+```bash
+npx sanity manage
+```
+
+Then run the studio:
+
+```bash
+npx sanity dev
+```
+
+### 4. Import Schemas
+
+The schemas are located in the `sanity/schemas` directory:
+- `teamMember.ts` - Team member profiles with name, role, image, and description
+- `contactInfo.ts` - Contact information including address, phone, email, and social links

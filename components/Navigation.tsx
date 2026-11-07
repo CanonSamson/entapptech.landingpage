@@ -40,6 +40,10 @@ const Navigation = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  if (pathname?.startsWith("/studio")) {
+    return null;
+  }
+
   return (
     <>
       <motion.div className="   z-50  flex flex-col  fixed  top-0 w-full  bg-white    ">

@@ -3,14 +3,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { X } from "lucide-react";
-
-interface TeamMember {
-  id: number;
-  name: string;
-  role: string;
-  image: string;
-  description: string;
-}
+import { urlFor } from "@/lib/sanity";
+import { TeamMember } from "@/lib/sanityQueries";
 
 interface TeamMemberModalProps {
   member: TeamMember | null;
@@ -24,6 +18,8 @@ const TeamMemberModal: React.FC<TeamMemberModalProps> = ({
   onClose,
 }) => {
   if (!member) return null;
+
+  const imageUrl = member.image ? urlFor(member.image).url() : '/images/image.png';
 
   return (
     <AnimatePresence>
@@ -50,7 +46,7 @@ const TeamMemberModal: React.FC<TeamMemberModalProps> = ({
               <div className="relative">
                 <div className="w-full flex items-center justify-center ">
                   <Image
-                    src={member.image}
+                    src={imageUrl}
                     alt={member.name}
                     width={400}
                     height={300}

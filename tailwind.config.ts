@@ -30,7 +30,7 @@ export default {
       fontFamily: {
         openSans: "var(--font-openSans)",
         montserrat: "var(--font-montserrat)",
-        inter: "var(-font-inter)"
+        inter: "var(--font-inter)"
 
       }
     },

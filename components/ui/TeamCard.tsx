@@ -1,33 +1,36 @@
 import Image from "next/image";
 import { item } from "@/utils/motion";
 import { motion } from "framer-motion";
+import { urlFor } from "@/lib/sanity";
 
 // Define the props interface
 interface TeamCardProps {
-  id: number;
-  image: string;
+  _id: string;
+  image: any;
   name: string;
   role: string;
   description: string;
-  onClick: (id: number) => void;
+  onClick: (id: string) => void;
 }
 
-const TeamCard: React.FC<TeamCardProps> = ({ 
-  image, 
-  name, 
-  role, 
+const TeamCard: React.FC<TeamCardProps> = ({
+  image,
+  name,
+  role,
   onClick,
-  id 
+  _id
 }) => {
+  const imageUrl = image ? urlFor(image).url() : '/images/image.png';
+
   return (
-    <motion.div 
-      variants={item} 
+    <motion.div
+      variants={item}
       className="font-montserrat cursor-pointer group"
-      onClick={() => onClick(id)}
+      onClick={() => onClick(_id)}
     >
       <div className="relative overflow-hidden">
         <Image
-          src={image}
+          src={imageUrl}
           alt={name}
           width={200}
           height={200}
